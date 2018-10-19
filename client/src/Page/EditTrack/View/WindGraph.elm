@@ -64,8 +64,7 @@ render { course, windSimDuration } =
 
         timeMarks =
             List.range 0 timeIntervals
-                |> List.map toFloat
-                |> List.map timeMarkCoords
+                |> List.map (toFloat >> timeMarkCoords)
                 |> List.map (SvgUtils.segment [])
     in
         svg
